@@ -1,6 +1,6 @@
-$bg-color: #111;
+$bg-color: #111111e6;
 $fg-color: #f8f8f8;
-$accent-color: #ff0069;
+$accent-color: #5b6ee1;
 $dark-color: #333;
 $void-color: #0a0a0a;
 $notice-color: #F2E461;
@@ -13,12 +13,6 @@ $width: 700px;
   src: url(/assets/fonts/MonaspaceKrypton-Medium.woff);
   font-weight: normal;
 }
-
-// @font-face {
-//   font-family: MonaspaceKrypton;
-//   src: url(/assets/fonts/MonaspaceKrypton-ExtraBoldItalic.woff);
-//   font-weight: bold-italic;
-// }
 
 @font-face {
   font-family: MonaspaceKrypton;
@@ -35,7 +29,7 @@ $width: 700px;
 }
 
 html {
-  background-color: $void-color;
+  background: $void-color url("/assets/img/bg.png");
 }
 
 a {
@@ -64,23 +58,7 @@ body {
   color: $fg-color;
 }
 
-// body::before {
-//   content: "body = {";
-//   color: $dark-color;
-// }
-
-// body::after {
-//   content: "}";
-//   color: $dark-color;
-// }
-
-
-
-//body > *,
-//section > *,
 nav > *,
-//header > *,
-//footer > *,
 article > * {
   margin-left: $tab-size;
 }
@@ -90,28 +68,16 @@ header {
   margin-bottom: $size;
 }
 
-// section:before {
-//   content: "section = {";
-//   color: $dark-color;
-// }
-
-// section:after {
-//   content: "}";
-//   color: $dark-color;
-// }
-
 h1:before {
   content: '# ';
   font-weight: normal;
   color: $accent-color;
-  // display: block;
 }
 
 h1:after {
   content: ' #';
   font-weight: normal;
   color: $accent-color;
-  // display: block;
 }
 
 h1 {
@@ -122,8 +88,6 @@ h1 {
     font-weight: bold;
     text-decoration: none;
   }
-
-  //margin-bottom: $size;
 }
 
 h1.notice::before,
@@ -137,30 +101,20 @@ h1.notice {
   text-align: center;
 }
 
-// h1:after {
-//   content: '"';
-//   font-weight: normal;
-//   display: block;
-//   color: $dark-color;
-// }
-
 h2:before {
   content: '# ';
   font-weight: normal;
   color: $accent-color;
-  // display: block;
 }
 
 h2:after {
   content: ' #';
   font-weight: normal;
   color: $accent-color;
-  // display: block;
 }
 
 h2 {
   font-weight: bold;
-  //text-transform: uppercase;
 
   a {
     font-weight: bold;
@@ -174,12 +128,10 @@ h3:before {
   content: '# ';
   font-weight: normal;
   color: $accent-color;
-  // display: block;
 }
 
 h3 {
   font-weight: bold;
-  //text-transform: uppercase;
 
   a {
     font-weight: bold;
@@ -269,26 +221,6 @@ header {
   }
 }
 
-// header::before {
-//   content: "header = {";
-//   color: $dark-color;
-// }
-
-// header::after {
-//   content: "}";
-//   color: $dark-color;
-// }
-
-// footer::before {
-//   content: "footer = {";
-//   color: $dark-color;
-// }
-
-// footer::after {
-//   content: "}";
-//   color: $dark-color;
-// }
-
 footer {
   p {
     color: $dark-color;
@@ -316,11 +248,6 @@ article::after {
   content: "}";
   color: $dark-color;
 }
-
-// hr::before {
-//   content: "# ";
-//   background-color: $bg-color;
-// }
 
 hr {
   color: $dark-color;
