@@ -11,6 +11,21 @@
             {{ content }}
         </section>
 
+        {% if page.next or page.previous %}
+            <hr />
+            <section>
+                <h1>Read more</h1>
+                <ul>
+                    {% if page.next %}
+                        <li>Next post: <a href="{{page.next.url}}">{{page.next.title}}</a></li>
+                    {% endif %}
+                    {% if page.previous %}
+                        <li>Previous post: <a href="{{page.previous.url}}">{{page.previous.title}}</a></li>
+                    {% endif %}
+                </ul>
+            </section>
+        {% endif %}
+
         <hr />
         {% include footer.html %}
     </body>
