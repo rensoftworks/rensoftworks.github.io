@@ -1,4 +1,4 @@
-$bg-color: #111111d8;
+$bg-color: #111111cc;
 $fg-color: #f8f8f8;
 $accent-color: #5b6ee1;
 $dark-color: #333;
@@ -30,6 +30,7 @@ $width: 700px;
 
 html {
   background: $void-color url("/assets/img/bg.png");
+  background-attachment: fixed;
 }
 
 a {
@@ -52,10 +53,11 @@ a:hover {
 
 body {
   width: $width;
-  margin: 0px auto;
+  margin: 50px auto;
   padding: 50px 30px;
   background-color: $bg-color;
   color: $fg-color;
+  border: 1px solid $accent-color;
 }
 
 article > *{
