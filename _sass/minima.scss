@@ -1,4 +1,4 @@
-$bg-color: #111111e6;
+$bg-color: #111111d8;
 $fg-color: #f8f8f8;
 $accent-color: #5b6ee1;
 $dark-color: #333;
@@ -58,13 +58,11 @@ body {
   color: $fg-color;
 }
 
-nav > *,
-article > * {
+article > *{
   margin-left: $tab-size;
 }
 
-section,
-header {
+section, header{
   margin-bottom: $size;
 }
 
@@ -83,11 +81,15 @@ h1:after {
 h1 {
   font-weight: bold;
   text-transform: uppercase;
+  text-align: center;
 
   a {
     font-weight: bold;
     text-decoration: none;
   }
+
+  margin-bottom: $size;
+  margin-top: 2*$size;
 }
 
 h1.notice::before,
@@ -99,6 +101,7 @@ h1.notice {
   background-color: $notice-color;
   color: $bg-color;
   text-align: center;
+  margin-top: $size;
 }
 
 h2:before {
@@ -122,6 +125,7 @@ h2 {
   }
 
   margin-bottom: $size;
+  margin-top: 2*$size;
 }
 
 h3:before {
@@ -151,11 +155,44 @@ p {
 }
 
 p:last-of-type {
-  margin-bottom: 0px;
+  margin-bottom: $size;
 }
 
 p:after {
   content: '"';
+  color: $dark-color;
+}
+
+ul::before {
+  content: "ul = [";
+  color: $dark-color;
+}
+
+ul {
+  list-style-type: none;
+
+  li::before {
+    content: '"';
+    color: $dark-color;
+  }
+
+  li {
+    margin-left: $tab-size;
+  }
+
+  li:last-child::after {
+    content: '"';
+    color: $dark-color;
+  }
+
+  li::after {
+    content: '",';
+    color: $dark-color;
+  }
+}
+
+ul::after {
+  content: "]";
   color: $dark-color;
 }
 
@@ -171,24 +208,29 @@ nav {
   }
 
   ul {
-    li::before {
-      content: '"';
-      color: $dark-color;
-    }
+    // li::before {
+    //   content: '"';
+    //   color: $dark-color;
+    // }
 
     li {
       display: inline;
+      margin-left: 0px;
+
+      a {
+        text-decoration: none;
+      }
     }
 
-    li:last-child::after {
-      content: '"';
-      color: $dark-color;
-    }
+    // li:last-child::after {
+    //   content: '"';
+    //   color: $dark-color;
+    // }
 
-    li::after {
-      content: '",';
-      color: $dark-color;
-    }
+    // li::after {
+    //   content: '",';
+    //   color: $dark-color;
+    // }
 
     display: inline;
     margin: 0px;
@@ -207,6 +249,7 @@ header {
 
   h1 {
     //text-transform: none;
+    text-transform: uppercase;
     text-align: center;
     margin-bottom: $size;
   }
@@ -224,6 +267,16 @@ header {
 footer {
   p {
     color: $dark-color;
+    margin-bottom: $size;
+  }
+
+  nav {
+    width: 45%;
+    margin: 0px auto;
+  }
+
+  p:last-of-type {
+    margin-bottom: $size;
   }
 }
 
@@ -252,6 +305,7 @@ article::after {
 hr {
   color: $dark-color;
   margin-bottom: $size;
+  margin-top: 2*$size;
   border-style: dashed;
   border-color: $dark-color;
   border-width: 2px 0px 0px 0px;
