@@ -1,12 +1,12 @@
 $bg-color: #111111cc;
-$fg-color: #f8f8f8;
+$fg-color: #e8e8e8;
 $accent-color: #5b6ee1;
 $dark-color: #333;
 $void-color: #0a0a0a;
 $notice-color: #F2E461;
 $size: 1em;
 $tab-size: 2em;
-$width: 700px;
+$width: 800px;
 
 @font-face {
   font-family: MonaspaceKrypton;
@@ -26,6 +26,7 @@ $width: 700px;
   font-family: MonaspaceKrypton, monospace;
   margin: 0px;
   padding: 0px;
+  line-height: 1.5*$size;
 }
 
 html {
@@ -54,7 +55,7 @@ a:hover {
 body {
   width: $width;
   margin: 50px auto;
-  padding: 50px 30px;
+  padding: 50px 80px;
   background-color: $bg-color;
   color: $fg-color;
   border: 1px solid $accent-color;
@@ -172,14 +173,20 @@ ul::before {
 
 ul {
   list-style-type: none;
+  margin-bottom: $size;
 
   li::before {
     content: '"';
     color: $dark-color;
   }
 
+  li:first-child {
+    margin-top: 0px;
+  }
+
   li {
     margin-left: $tab-size;
+    margin-top: $size;
   }
 
   li:last-child::after {
@@ -257,7 +264,7 @@ header {
   }
 
   nav {
-    width: 66%;
+    width: 57%;
     margin: 0px auto;
   }
 
