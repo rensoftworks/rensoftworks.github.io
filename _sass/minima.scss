@@ -6,7 +6,7 @@ $void-color: #0a0a0a;
 $notice-color: #F2E461;
 $size: 1em;
 $tab-size: 2em;
-$width: 800px;
+$width: 750px;
 
 @font-face {
   font-family: MonaspaceKrypton;
@@ -50,12 +50,10 @@ a:hover {
   background-color: $fg-color;
 }
 
-
-
 body {
-  width: $width;
+  max-width: $width;
   margin: 50px auto;
-  padding: 50px 80px;
+  padding: 30px 80px;
   background-color: $bg-color;
   color: $fg-color;
   border: 1px solid $accent-color;
@@ -217,11 +215,6 @@ nav {
   }
 
   ul {
-    // li::before {
-    //   content: '"';
-    //   color: $dark-color;
-    // }
-
     li {
       display: inline;
       margin-left: 0px;
@@ -230,16 +223,6 @@ nav {
         text-decoration: none;
       }
     }
-
-    // li:last-child::after {
-    //   content: '"';
-    //   color: $dark-color;
-    // }
-
-    // li::after {
-    //   content: '",';
-    //   color: $dark-color;
-    // }
 
     display: inline;
     margin: 0px;
@@ -257,15 +240,13 @@ header {
   }
 
   h1 {
-    //text-transform: none;
     text-transform: uppercase;
-    text-align: center;
     margin-bottom: $size;
   }
 
   nav {
-    width: 57%;
-    margin: 0px auto;
+    display: table;
+    margin: auto;
   }
 
   h1::after {
