@@ -6,7 +6,7 @@ $void-color: #0a0a0a;
 $notice-color: #F2E461;
 $size: 1em;
 $tab-size: 2em;
-$width: 750px;
+$width: 700px;
 
 @font-face {
   font-family: MonaspaceKrypton;
@@ -27,9 +27,12 @@ $width: 750px;
   margin: 0px;
   padding: 0px;
   line-height: 1.5*$size;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 html {
+  overflow: scroll;
   background: $void-color url("/assets/img/bg.png");
   background-attachment: fixed;
 }
@@ -50,13 +53,31 @@ a:hover {
   background-color: $fg-color;
 }
 
+@media only screen and (min-width: 900px) {
+  body {
+    margin: 50px auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 80px;
+    padding-right: 80px;
+    border: 1px solid $accent-color;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  body {
+    margin: 0px auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
 body {
   max-width: $width;
-  margin: 50px auto;
-  padding: 30px 80px;
   background-color: $bg-color;
   color: $fg-color;
-  border: 1px solid $accent-color;
 }
 
 article > *{
