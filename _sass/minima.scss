@@ -10,7 +10,7 @@ $width: 700px;
 
 @font-face {
   font-family: MonaspaceKrypton;
-  src: url(/assets/fonts/MonaspaceKrypton-Medium.woff);
+  src: url(/assets/fonts/MonaspaceKrypton-Regular.woff);
   font-weight: normal;
 }
 
@@ -53,8 +53,9 @@ a:hover {
   background-color: $fg-color;
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 859px) {
   body {
+    max-width: $width;
     margin: 50px auto;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -64,18 +65,17 @@ a:hover {
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 859px) {
   body {
-    margin: 0px auto;
+    margin: 0px;
     padding-top: 30px;
     padding-bottom: 30px;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 }
 
 body {
-  max-width: $width;
   background-color: $bg-color;
   color: $fg-color;
 }
@@ -185,6 +185,10 @@ p:after {
   color: $dark-color;
 }
 
+strong {
+  font-weight: bold;
+}
+
 ul::before {
   content: "ul = [";
   color: $dark-color;
@@ -195,7 +199,7 @@ ul {
   margin-bottom: $size;
 
   li::before {
-    content: '"';
+    content: '" - ';
     color: $dark-color;
   }
 
@@ -236,13 +240,17 @@ nav {
   }
 
   ul {
+    li::before {
+      content: '"';
+    }
+
     li {
       display: inline;
       margin-left: 0px;
 
-      a {
-        text-decoration: none;
-      }
+      // a {
+      //   text-decoration: none;
+      // }
     }
 
     display: inline;
