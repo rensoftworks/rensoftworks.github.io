@@ -24,22 +24,11 @@ $section-width: 650px;
   font-weight: bold;
 }
 
-// * {
-//     margin: 0px;
-//     padding: 0px;
-// }
-
 html {
     height: 100%;
 }
 
 body {
-    display: grid;
-    grid-template-columns: $header-width $section-width;
-    align-content: center;
-    row-gap: 16px;
-    column-gap: 16px;
-
     background-color: $bg-color;
     color: $fg-color;
     font-family: Match, sans-serif;
@@ -47,9 +36,115 @@ body {
     font-smooth: never;
     -webkit-font-smoothing : none;
     -moz-osx-font-smoothing: none;
-    width: $page-width;
-    height: 100%;
-    margin: 0px auto;
+
+    scrollbar-width: thin;
+    scrollbar-color: $fg-color $bg-color;
+}
+
+header {
+    a {
+        line-height: 0px;
+        text-decoration: none;
+    }
+
+    nav li {
+        list-style: none;
+    }
+}
+
+article {
+    li {
+        list-style: inside;
+        list-style-type: square;
+    }
+
+    li::marker {
+        margin-right: 8px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    p:before {
+        content:" ";
+        display:inline-block;
+        margin-left: 40px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+        #logo {
+            display: block;
+            width: 182px;
+            margin: 0px auto;
+        }
+
+        nav {
+            ul {
+                display: flex;
+                justify-content: space-evenly;
+
+                padding: 0px;
+                margin: 8px 0px;
+            }
+
+            li {
+                display: inline;
+            }
+        }
+    }
+
+    article {
+        border-top: 2px solid $fg-color;
+        padding: 8px 12px;
+    }
+
+    footer {
+        padding-bottom: 8px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    body {
+        display: grid;
+        grid-template-columns: $header-width $section-width;
+        align-content: center;
+        row-gap: 16px;
+        column-gap: 16px;
+
+        width: $page-width;
+        height: 100%;
+        margin: 0px auto;
+    }
+
+    header {
+        display: grid;
+        align-content: center;
+        grid-template-columns: auto auto;
+
+        #logo {
+            margin: auto;
+        }
+
+        nav li {
+            text-align: right;
+        }
+
+        nav li a:after {
+            content: " >";
+        }
+    }
+
+    article {
+        max-height: $page-height;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+
+        border-left: 2px solid $fg-color;
+        padding: 16px 24px;
+    }
 }
 
 h1, h2 {
@@ -76,63 +171,10 @@ header>a:hover {
     background-color: $bg-color;
 }
 
-header {
-    display: grid;
-    grid-template-columns: auto auto;
-    align-content: center;
-
-    a {
-        margin: auto;
-        line-height: 0px;
-        text-decoration: none;
-    }
-
-    nav li {
-        list-style: none;
-        text-align: right;
-    }
-
-    nav li a:after {
-        content: " >";
-    }
-}
-
-article {
-    min-height: $page-height;
-    max-height: $page-height;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-
-    scrollbar-width: thin;
-    scrollbar-color: $fg-color $bg-color;
-
-    border-left: 2px solid $fg-color;
-    padding: 16px 24px;
-
-    li {
-        list-style: inside;
-        list-style-type: square;
-    }
-
-    li::marker {
-        margin-right: 8px;
-    }
-
-    h1 {
-        text-align: center;
-    }
-
-    p:before {
-        content:" ";
-        display:inline-block;
-        margin-left: 40px;
-    }
-}
-
 footer {
     grid-column-start: 1;
     grid-column-end: 3;
-    opacity: 30%;
+    opacity: 25%;
     font-size: 16px;
     text-align: center;
 }

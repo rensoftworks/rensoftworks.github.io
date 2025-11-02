@@ -32,6 +32,6 @@ Play the game on itch.io: [https://rensoftworks.itch.io/triple-the-defence-budge
 
 ## Slang
 
-*Slang* is a custom data serialization and configuration language, focusing on simple, editor-friendly syntax. It was developed for Song of Eterna, mostly out of frustration with JSON and lack of good alternatives in Godot. **Fun fact:** this site is styled like a Slang document.
+*Slang* is a custom data serialization and configuration language, focusing on simple, editor-friendly syntax. It was developed for Song of Eterna, mostly out of frustration with JSON and lack of good alternatives in Godot.
 
 Get Slang here: [https://github.com/rensoftworks/slang](https://github.com/rensoftworks/slang)
