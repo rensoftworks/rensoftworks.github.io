@@ -1,5 +1,28 @@
 <header>
     <a id="logo" href="/"><img alt="Ren Softworks" src="/assets/img/rensoft-logo.png" width="182" height="44"></a>
+    <script type="text/javascript">
+        (function() {
+            const LOGO_LIGHT = "/assets/img/rensoft-logo.png";
+            const LOGO_DARK = "/assets/img/rensoft-logo-dark.png";
+
+            const logoImg = document.querySelector("#logo>img");
+            if (!logoImg) return;
+
+            // Preload both images to prevent flickering
+            const preloadDark = new Image();
+            preloadDark.src = LOGO_DARK;
+
+            function updateLogo(isDarkTheme) {
+                logoImg.src = isDarkTheme ? LOGO_DARK : LOGO_LIGHT;
+            }
+
+            const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            darkModeQuery.addEventListener('change', event => updateLogo(event.matches));
+
+            updateLogo(darkModeQuery.matches);
+        })();
+    </script>
+
     <nav>
         <ul>
             <li><a href="/">home</a></li>
