@@ -1,10 +1,10 @@
 // Light theme
-$fg-color: #ffffff;
-$bg-color: #5b6ee1;
+$fg-color-light: #ffffff;
+$bg-color-light: #5b6ee1;
 
 // Dark theme
-// $fg-color: #5b6ee1;
-// $bg-color: #000000;
+$fg-color-dark: #5b6ee1;
+$bg-color-dark: #000000;
 
 $font-size: 32px;
 $page-width: 1000px;
@@ -24,13 +24,17 @@ $section-width: 650px;
   font-weight: bold;
 }
 
+:root {
+  color-scheme: light dark;
+}
+
 html {
     height: 100%;
 }
 
 body {
-    background-color: $bg-color;
-    color: $fg-color;
+    background-color: light-dark($bg-color-light, $bg-color-dark);
+    color: light-dark($fg-color-light, $fg-color-dark);
     font-family: Match, sans-serif;
     font-size: $font-size;
     font-smooth: never;
@@ -38,7 +42,7 @@ body {
     -moz-osx-font-smoothing: none;
 
     scrollbar-width: thin;
-    scrollbar-color: $fg-color $bg-color;
+    scrollbar-color: light-dark($fg-color-light, $fg-color-dark) light-dark($bg-color-light, $bg-color-dark);
 }
 
 header {
@@ -97,7 +101,7 @@ article {
     }
 
     article {
-        border-top: 2px solid $fg-color;
+        border-top: 2px solid light-dark($fg-color-light, $fg-color-dark);
         padding: 8px 12px;
     }
 
@@ -142,7 +146,7 @@ article {
         overflow-y: scroll;
         scroll-behavior: smooth;
 
-        border-left: 2px solid $fg-color;
+        border-left: 2px solid light-dark($fg-color-light, $fg-color-dark);
         padding: 16px 24px;
     }
 }
@@ -152,29 +156,29 @@ h1, h2 {
 }
 
 a {
-    color: $fg-color;
+    color: light-dark($fg-color-light, $fg-color-dark);
 }
 
 a:hover {
-    color: $bg-color;
-    background-color: $fg-color;
+    color: light-dark($bg-color-light, $bg-color-dark);
+    background-color: light-dark($fg-color-light, $fg-color-dark);
 }
 
 hr {
-  color: $fg-color;
-  border-color: $fg-color;
+  color: light-dark($fg-color-light, $fg-color-dark);
+  border-color: light-dark($fg-color-light, $fg-color-dark);
   border-width: 0px 0px 2px 0px;
 }
 
 header>a:hover {
-    color: $fg-color;
-    background-color: $bg-color;
+    color: light-dark($fg-color-light, $fg-color-dark);
+    background-color: light-dark($bg-color-light, $bg-color-dark);
 }
 
 footer {
     grid-column-start: 1;
     grid-column-end: 3;
-    opacity: 25%;
+    opacity: 50%;
     font-size: 16px;
     text-align: center;
 }
