@@ -10,7 +10,9 @@ $font-size: 32px;
 $page-width: 1000px;
 $page-height: 600px;
 $header-width: 350px;
-$section-width: 650px;
+// 642 = 2px border + 48px padding + a 592px text column, a whole number of
+// 16px divider repeats (see hr below).
+$section-width: 642px;
 
 @font-face {
   font-family: Match;
@@ -167,8 +169,11 @@ a:hover {
 // Section divider: a band of pixel stairs. bg.png is a stencil (opaque
 // steps, transparent ground), so the steps take the theme's text colour.
 hr {
-  height: 16px;
-  margin: 16px 0px;
+  // 8px is the top half of the tile: one row of stepped dashes. Its width is
+  // rounded down to whole 16px repeats so the band never ends mid-step.
+  width: unquote("round(down, 100%, 16px)");
+  height: 8px;
+  margin: 16px auto;
   border: 0px;
   background-color: light-dark($fg-color-light, $fg-color-dark);
   -webkit-mask-image: url(/assets/img/bg.png);
