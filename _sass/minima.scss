@@ -1,9 +1,9 @@
 // Light theme
 $fg-color-light: #ffffff;
-$bg-color-light: #5b6ee1;
+$bg-color-light: #596ce1;
 
 // Dark theme
-$fg-color-dark: #5b6ee1;
+$fg-color-dark: #596ce1;
 $bg-color-dark: #000000;
 
 $font-size: 32px;
@@ -178,7 +178,6 @@ header>a:hover {
 footer {
     grid-column-start: 1;
     grid-column-end: 3;
-    opacity: 50%;
     font-size: 16px;
     text-align: center;
 }
