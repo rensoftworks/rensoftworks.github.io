@@ -164,10 +164,17 @@ a:hover {
     background-color: light-dark($fg-color-light, $fg-color-dark);
 }
 
+// Section divider: a band of pixel stairs. bg.png is a stencil (opaque
+// steps, transparent ground), so the steps take the theme's text colour.
 hr {
-  color: light-dark($fg-color-light, $fg-color-dark);
-  border-color: light-dark($fg-color-light, $fg-color-dark);
-  border-width: 0px 0px 2px 0px;
+  height: 16px;
+  margin: 16px 0px;
+  border: 0px;
+  background-color: light-dark($fg-color-light, $fg-color-dark);
+  -webkit-mask-image: url(/assets/img/bg.png);
+  mask-image: url(/assets/img/bg.png);
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
 }
 
 header>a:hover {
